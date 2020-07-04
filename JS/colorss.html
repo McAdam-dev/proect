@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+         *{
+            padding:0;
+            margin:0;
+            box-sizing:border-box;
+            
+        }
+        body{
+            background:black;
+        }
+        .colors{
+            width:100%;
+            margin-top:20px;
+            display:inline-block;
+        }
+        .color{
+            width:15px;
+            height:15px;
+            display:inline-block;
+            background:red;
+            list-style-type:none;
+        }
+        
+    </style>
+</head>
+<body>
+
+        <div class="colors">
+        </div>
+
+    
+     <script>
+                let colors = document.querySelector('.colors'),a=0,b=255,c=0,o;
+                for(let i = 0;i<1020;i++){
+                    if(i%80===0){
+                        colors.innerHTML += "</br>";
+                    }
+                     colors.innerHTML += '<div class="color"></div>';
+                     
+                }
+                let color = document.querySelectorAll('.color');
+
+                for(let j = 0;j < 1020; j++){
+                    o/=10;
+                    color[j].style.background = `rgb(${a},${b},255)`;
+                    a+=3;
+                    
+                    if(a<=80){
+                        a=0;
+                        b--;
+                    }
+                    console.log(o);
+                }
+    </script> 
+</body>
+</html>

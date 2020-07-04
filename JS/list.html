@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing:border-box;
+            padding:0;
+            margin:0;
+        }
+        .list{
+            width:300px;
+
+            height:80px;
+            display:inline-block;
+            text-align:center;
+            position:relative;
+            padding:26px;
+            background:blue;
+            margin-top:5px;
+            font-size:22px;
+            z-index:1;
+            cursor:pointer;
+        }
+        .bg{
+            width:0%;
+            background:red;
+            height:80px;
+            position:absolute;  
+            top:0;
+            left:0;
+            transition:all .5s;
+            opacity:1;
+        }
+        .p{
+            position:absolute;
+            top:0;
+            left:0;
+            width:100%;
+            height:80px;
+            padding-top:28px;
+        }
+        .list:hover .bg{
+            width:100%;
+            transition:all 1s;
+            opacity:0.7;
+            
+        }
+        .k{
+            position:absolute;
+            top:-80px;
+            right:-80px;
+            width:0;
+            height:0;
+            border:80px solid #fff;
+            border-left-color:transparent;
+            border-right-color:transparent;
+            border-top-color:transparent;
+        }
+    </style>
+</head>
+<body>
+    <div class="result">
+    <div class="list"><div class="bg"></div><div class = "p">Lorem, ipsum dolor.</div><div class="k"></div></div><br>
+    </div>
+    <script>
+        var result = document.querySelector('.result');
+        addEventListener('keydown',function(event){
+            if(event.keyCode === 32){
+                var addDiv = '<div class="list"><div class="bg"></div><div class = "p">Lorem, ipsum dolor.</div><div class="k"></div></div><br>';
+                result.innerHTML +=addDiv;
+            }
+        });
+    </script>
+</body>
+</html>

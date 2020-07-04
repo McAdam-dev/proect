@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        
+        canvas{
+            border:2px solid #000;
+            background:red;
+        }
+
+    </style>
+</head>
+<body>
+    <canvas id="mycanvas" height = "400" width = "600"></canvas>
+    
+    <script>
+        window.onload =function(){
+
+            let mycanvas = document.querySelector("#mycanvas");
+            let = ctx = mycanvas.getContext("2d");
+            ctx.beginPath();
+            ctx.lineWidth ="55";
+            ctx.lineJoin = "bevel";
+            ctx.strokeStyle = "green";
+            ctx.moveTo(0,0);
+            ctx.lineTo(200,200);
+            ctx.lineTo(400,40);
+            ctx.closePath();
+            ctx.stroke();
+
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        body{
+            background:rgba(41,165,120,1);
+        }
+
+        .box{
+            position:absolute;
+            top:50%;
+            left:50%;
+            transform:translate(-50%,-50%)rotateX(75deg);
+        }
+        .circle{
+            width:20px;
+            height:20px;
+            position:fixed;
+            background:rgba(171,72,48,1);
+            animation:daire 4s linear infinite;
+            transform: translateX(-50%);
+            border-radius:50%;
+        }
+        .a2{
+            animation-delay:800ms;
+        }
+        .a3{
+            animation-delay:1.6s;
+        }
+        .a4{
+            animation-delay:2.4s;
+        }
+        .a5{
+            animation-delay:3.2s;
+        }
+        .a6{
+            animation-delay:4s;
+        }
+        @keyframes daire {
+            from{
+                border:4px solid rgba(156,10,1,1);
+            }
+            to{
+                border:0 solid rgba(156,10,1,1);
+                opacity:0;
+                width:800px;
+                top:0;
+                height:800px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <span class="circle a1"></span>
+        <span class="circle a2"></span>
+        <span class="circle a3"></span>
+        <span class="circle a4"></span>
+        <span class="circle a5"></span>
+        <span class="circle a6"></span>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lord</title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+            box-sizing:border-box;
+        }
+        html{
+            font-size:10px;
+        }
+        .container{
+            width:100rem;
+            height:50rem;
+            background:#000;
+            display:inline-block;
+            margin:5% 17rem;
+            position:relative;
+
+        }
+        .barrier,.lord{
+            width:5rem;
+            height:5rem;
+            background:#eaeaea;
+            position:absolute;
+            border-radius:50%;
+        }
+        .barrier{
+            top:30rem;
+            left:80rem;
+            background:rgb(202, 184, 17);
+            width:20px;
+            height:20px;
+        }
+        .lord{
+            top:0;
+            left:0;
+            font-size:24px;
+            text-align:center;
+            padding-top:1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="lord">0</div>
+        <div class="barrier"></div>
+    </div>
+    <script>
+        let lord = document.querySelector('.lord'),
+        barrier = document.querySelector('.barrier'),
+        b_x = 800,b_y = 300,l_x = 0,l_y = 0,coint = 0,rt = 0; //rotate
+
+        setInterval(run,1);
+
+        function run(){
+            for(let i = 0; i<2 ;i++){
+            if(b_x > l_x) l_x+=1;
+            else if(b_x < l_x) l_x-=1;
+            if(b_y >= l_y) l_y+=1;
+            else if(b_y < l_y) l_y -= 1;
+            rt+=1;
+            lord.style.transform = "rotate("+rt%360 + "deg)";
+            lord.style.top = l_y +"px";
+            lord.style.left = l_x + 'px';
+            if(b_y === l_y && b_x === l_x){
+                let x = Math.floor(Math.random()*1001),
+                y = Math.floor(Math.random()*301);
+                b_y = y;
+                b_x = x;
+                barrier.style.top = b_y +'px';
+                barrier.style.left = b_x + 'px';
+                coint++;
+                lord.innerHTML = coint;
+            }
+        }
+            
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // document.addEventListener('keydown',function(event){ // control
+        //     if(event.keyCode === 87){
+        //         b_y-=8;
+        //         barrier.style.top = b_y + "px";
+        //     }
+        //     if(event.keyCode === 83){
+        //         b_y+=8;
+        //         barrier.style.top = b_y + "px";
+        //     }
+        //     if(event.keyCode === 65){
+        //         b_x-=8;
+        //         barrier.style.left = b_x + "px";
+        //     }
+        //     if(event.keyCode === 68){
+        //         b_x+=8;
+        //         barrier.style.left = b_x + "px";
+        //     }
+        // });
+    </script>
+</body>
+</html>

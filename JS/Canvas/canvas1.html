@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <div class="row bg-light">
+        <div class="col-3 text-center h3 p-3">NVDIA</div>
+
+        <div class="col-9">
+
+            <ul class = "list-unstyled p-3 float-right">
+                <li class = "d-inline-block h5 mr-5 pt-1">aaaaaaa</li>
+                <li class = "d-inline-block h5 mr-5 pt-1">aaaaaaa</li>
+                <li class = "d-inline-block h5 mr-5 pt-1">aaaaaaa</li>
+                <li class = "d-inline-block h5 mr-5 pt-1">aaaaaaa</li>
+                <li class = "d-inline-block h5 mr-5 pt-1">aaaaaaa</li>
+            </ul>
+        </div>
+    </div>
+    <div class="conatiner bg-light">
+        <div class="row">
+            <div class="col-6">
+                <img src="profile.png" alt="aa" class = "w-100">
+            </div>
+            <div class="col-6 mt-5">
+                <p class = "h6 mt-5">THIS IS ME</p>
+                <h2 class = "font-weight-bold">NEZAKET</h2>
+                <p class = "text-muted mt-2">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt id voluptatem illo accusamus similique ratione ullam quis molestiae, neque hic!</p>
+                <button class="btn btn-success mt-3">Discover Now</button>
+            </div>
+        </div>
+    </div>
+
+
+    
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+    KVADRAT 
+
+fillRect(x-k , y-k , en , hundurluy);  //  kvadrat  cekmey ucun          k - kordinat  
+fillStyle = "#fff"    // rengi kn=vadratin 
+clearRect(x-k , y-k , en , hundurluy)               // temizleme
+
+    DUZ XETT
+
+    beginPath();   elan eliyirik
+    lineWidth = "12"     olcusu
+    lineJoin = "bevel";   ve ya round , miter     //  tilleri duzeltmek
+    strokeStyle = "reng"    rengi
+    moveTo(x-k,y-k)   baslanqic-k
+    lineTo(x-k,y-k)   bitis-k
+    stroke();    bitdiyini elan eliyirik
+    closePath();    baslangic ile bitisi bitisdirir
+
+    DAIRE
+
+    beginPath();
+    arc(x-k,y-k,radius , baslanqic , bitis);
+    stroke();              // ici bos daire
+
+    beginPath();
+    arc(x-k,y-k,radius , baslanqic , bitis);
+    fill();              // ici dolu daire
+
+
+    RENG YARATMAQ
+
+    let reng = ctx.createLinearGradient(0,0,200,250);
+        reng.addColorStop(0,"red");
+        reng.addColorStop(0.5,"green");
+        reng.addColorStop(1,"yellow");
+
+    TEXT
+
+    let grad = ctx.createLinearGradient(100,150,400,0);
+        grad.addColorStop(0,"white");
+        grad.addColorStop(0.5,"red");
+        grad.addColorStop(1,"blue");
+        ctx.fillStyle = grad;
+        ctx.fillText("salam dunya",100,100);
+
+    SEKIL TEKARALAMA
+
+    let = sekil = document.getElementById("sekil"),
+        reng = ctx.createPattern(sekil,"repeat");
+        ctx.fillStyle = ctx.createPattern(sekil,"repeat");    // repeat-x   repaet-y  no-repaet
+        ctx.fillRect(0,0,myCanvas.width,myCanvas.height)
+
+    SEKILI CANVASIN ICINE YERLESDIRMEK
+
+    sekil = document.querySelector("#sekil");
+    ctx.drawImage(sekil,x-k,y-k,sekilin eni,uzunluqu, s-g-i-h-b-x-k ,s-g-i-h-b-y-k, bitis-x- , bitis - y-k )   //s-g-i-h-b ----  seklin gorsenmesi istediyin hissesinin baslangic  
+
+    EYRI XETT CEKMEY UCUN
+
+    moveTo(x-k,y-k);
+    bezierCurveTo(x,y,x,y......)      //            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    ctx.save     // yaddasa yazmaq
+    ctx.restore    // yaddsa yazdigin yere geri donmey
+-->

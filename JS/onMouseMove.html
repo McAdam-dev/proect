@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>onMouseMove</title>
+    <style>
+        .box{
+        width:10px;
+        height:10px;
+        background:red;
+        position:absolute;
+        top:-55;
+        left:-55;
+            border-radius:50%;
+        }
+        .boxx{
+          width:10px;
+          height:10px;
+          background:red;
+          position:absolute;
+          top:-5;
+          left:-5;
+              border-radius:50%;
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <div id="a" style = "width:100%;height:50vh;border:5px solid red;" onMouseMove = "onMouseMove(event);" onclick = "ciz()" class = 'header'>
+        <div class="box"></div>
+    </div>
+    <div class="result"></div>
+
+
+
+    <script>
+    var a = 0,x,y;
+        function onMouseMove(e){
+            var box = document.querySelector('.box');
+            x = e.x-5,y = e.y-5;
+            box.style.left = x + 'px';
+            box.style.top = y + 'px';
+            document.querySelector('.result').innerHTML = x+" "+y;
+
+        }
+        function ciz(){
+            console.log(x + ' ' + y);
+            document.querySelector('.header').innerHTML += '<div class="boxx result'+a+'"></div>';
+            document.querySelector('.result'+a).style.top = y + 'px';
+            document.querySelector('.result'+a).style.left = x + 'px';
+            a++;
+        }
+
+    </script>
+</body>
+</html>

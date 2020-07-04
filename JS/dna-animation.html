@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{
+            padding:0;
+            margin:0;
+            color:#fff;
+            background:#000;
+        }
+        .box{
+            position:absolute;
+            top:40%;
+            left:30%;
+        }
+        .re{
+            position:relative;
+        }
+      
+        
+        .dna{
+            position:absolute;
+            width:25px;
+            height:25px;
+            display:inline-block;
+            background:rgba(22,22,224,1);
+            border-radius:50%;
+            float:left;
+            animation:hereket 3s ease infinite;
+        }
+        .dna:after{
+            content:"";
+            position:absolute;
+            width:25px;
+            height:25px;
+            display:inline-block;
+            background:red;
+            border-radius:50%;
+            float:left;
+            animation:run 3s linear infinite;
+        }
+
+        @keyframes hereket {
+            0%{
+                top:0;
+                width:25px;
+                height:25px;
+            }
+            25%{
+                width:10px;
+                height:10px;
+            }
+            50%{
+                top:150px;
+                width:25px;
+                height:25px;
+            }
+            75%{
+                width:25px;
+                height:25px;
+
+            }
+            100%{
+                top:0;
+                width:25px;
+                height:25px;
+            }
+        }
+        @keyframes run {
+            0%{
+                animation-delay:3s;
+                top:150px;
+                width:25px;
+                height:25px;
+            }
+            25%{
+                z-index:10;
+                width:25px;
+                height:25px;
+            }
+            50%{
+                top:-100px;
+                width:25px;
+                height:25px;
+            }
+            75%{
+                width:10px;
+                height:10px;
+
+            }
+            100%{
+                top:150px;
+                width:25px;
+                height:25px;
+            }
+        }
+        .dna1{
+            animation-delay:0;
+            top:0;
+            left:0;
+        }
+        .dna2{
+            animation-delay:.1s;
+            top:0;
+            left:35px;
+        }
+        .dna3{
+            animation-delay:.2s;
+            top:0;
+            left:70px;
+        }
+        .dna4{
+            animation-delay:.3s;
+            top:0;
+            left:105px;
+        }
+        .dna5{
+            animation-delay:.4s;
+            top:0;
+            left:140px;
+        }
+        .dna6{
+            animation-delay:.5s;
+            top:0;
+            left:175px;
+        }
+        .dna7{
+            animation-delay:.6s;
+            top:0;
+            left:210px;
+        }
+        .dna8{
+            animation-delay:.7s;
+            top:0;
+            left:245px;
+        }
+        .dna9{
+            animation-delay:.8s;
+            top:0;
+            left:280px;
+        }
+        .dna0{
+            animation-delay:.9s;
+            top:0;
+            left:315px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="re">
+                <div class="dna dna1"></div>
+                <div class="dna dna2"></div>
+                <div class="dna dna3"></div>
+                <div class="dna dna4"></div>
+                <div class="dna dna5"></div>
+                <div class="dna dna6"></div>
+                <div class="dna dna7"></div>
+                <div class="dna dna8"></div>
+                <div class="dna dna9"></div>
+                <div class="dna dna0"></div>
+        </div>
+    </div>
+    
+</body>
+</html>

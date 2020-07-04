@@ -1,0 +1,32 @@
+*{
+    margin:0;
+    padding:0;
+}
+#canvas{
+    width:1000px;
+    height:300px;
+    position:relative;
+    margin:100px auto;
+    background:grey;
+    border-bottom:5px solid black;
+}
+
+#dino{
+    width:25px;
+    position:absolute;
+    top:250px;
+    left:125px;
+    height:50px;
+    background:rgb(56, 36, 82);
+    
+    font-size:20px;
+}
+.barrier{
+    width:40px;
+    height:40px;
+    background:rgb(12, 71, 68);
+    position:absolute;
+    bottom:0;
+    left:960;
+
+}

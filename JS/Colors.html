@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Colors</title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+            box-sizing:border-box;
+        }
+        body{
+            background:rgb(0, 0, 0);
+        }
+        .container{
+            width:100%;
+            display:inline-block;
+            margin:0 auto;
+            padding-top:.2%;
+            padding-bottom:.2%;
+        }
+        .color{
+            list-style-type: none;  
+            background:rgba(9,67,166,1);
+            width:19%;
+            height:215px;
+            display:inline-block;
+            float:left;
+            margin:1.2px;
+            position:relative;  
+            transition:all 1s;  
+            cursor:pointer;
+        }
+        .colors{
+            width:85%;
+            margin:0 auto;
+        }
+        html{
+            font-size:10px;
+        }
+        .color p{
+            font-size:2rem;
+            display:inline-block;
+            position:absolute;
+            bottom:0;
+            right:0;
+            width:100%;
+            height:4rem;
+            padding-top:.5rem;  
+            text-align:center;
+            background:black;
+            color:#fff;
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            opacity:0;
+            z-index:5;
+            transition:all 1s;
+        }
+        .color:hover{
+            transition:all 1s;
+            opacity:0.8;
+        }
+        .color:hover p{
+            opacity:1;
+            transition:all 1s;
+        }
+        .rgb{
+            display:inline-block;
+            position:absolute;
+            top:28%;
+            left:0;
+        }
+        .rgb li{
+            color:#fff;
+            cursor:pointer;
+            margin-top:1rem;
+            border:2px solid white;
+            padding-top:2rem;
+            list-style-type:none;
+            width:60px;
+            height:60px;
+            text-align:center;
+            font-size:1.6rem;
+            transition:all 1s;
+        }
+        .rgb li:hover{
+            transition:all 1s;
+            border:none;
+            font-weight:900;
+        }
+        .random:hover{
+            background:#fff;
+            color:black;
+        }
+        .red:hover{
+            background:red;
+        }
+        .green:hover{
+            background:green;
+        }
+        .blue:hover{
+            background:blue;
+        }
+        .color:checked{
+            content:copy;
+        }
+        @media screen and (max-width:900px){
+            .colors{
+                width:75%;
+                margin-top:10%;
+
+            }
+            .color{
+                width:30%;
+                height:100px;
+            }
+            .color p{
+                padding-top:1.5rem;
+                font-size:1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <ul class="rgb">
+            <li class="random">random</li>
+            <li class="red">red</li>
+            <li class="green">green</li>
+            <li class="blue">blue</li>
+        </ul>
+        <ul class="colors">
+        </ul>
+    </div>
+    <script>
+        let colors = document.querySelector('.colors'),a,b,c,o;
+        for(let i = 0;i<15;i++) colors.innerHTML += '<li class="color"><p>Lorem, ipsum.</p></li>';
+        let color = document.querySelectorAll('.color');
+           
+        let random = document.querySelector('.random'),
+        red = document.querySelector('.red'),
+        blue = document.querySelector('.blue'),
+        green = document.querySelector('.green');
+
+
+        random.addEventListener('click',randomColor);
+        red.addEventListener('click',randomRed);
+        green.addEventListener('click',randomGreen);
+        blue.addEventListener('click',randomBlue);
+
+        function randomColor(){
+            for(let j = 0;j < 15; j++){
+            a = Math.floor(Math.random()*254);
+            b = Math.floor(Math.random()*254);
+            c = Math.floor(Math.random()*254);
+            o = 7 + Math.floor(Math.random()*4);
+            o/=10;
+            color[j].style.background = `rgba(${a},${b},${c},1)`;
+            color[j].firstElementChild.innerHTML = `rgba(${a},${b},${c},1)`;
+            console.log(o);
+        }
+        }
+
+        function randomRed(){
+            for(let j = 0;j < 15; j++){
+            a = 150 + Math.floor(Math.random()*104);
+            b = Math.floor(Math.random()*90);
+            c = b;
+            o = 7 + Math.floor(Math.random()*4);
+            o/=10;
+            color[j].style.background = `rgba(${a},${c},${b},1)`;
+            color[j].firstElementChild.innerHTML = `rgba(${a},${c},${b},1)`;
+            console.log(o);
+        }
+        }
+
+        function randomGreen(){
+            for(let j = 0;j < 15; j++){
+            a = 150 + Math.floor(Math.random()*104);
+            b = Math.floor(Math.random()*90);
+            c = b;
+            o = 7 + Math.floor(Math.random()*4);
+            o/=10;
+            color[j].style.background = `rgba(${c},${a},${b},1)`;
+            color[j].firstElementChild.innerHTML = `rgba(${c},${a},${b},1)`;
+            console.log(o);
+        }
+        }
+
+        function randomBlue(){
+            for(let j = 0;j < 15; j++){
+            a = 150 + Math.floor(Math.random()*104);
+            b = Math.floor(Math.random()*120);
+            c = b;
+            o = 7 + Math.floor(Math.random()*4);
+            o/=10;
+            color[j].style.background = `rgba(${c},${b},${a},1)`;
+            color[j].firstElementChild.innerHTML = `rgba(${c},${b},${a},1)`;
+            console.log(o);
+        }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{
+            background:darkred;
+        }
+        .mycanvas{
+            background:#000;
+            box-shadow:10px 20px 30px 10px;
+            width:100%;
+            height:100%;
+            transform:transalte(-50%,-50%);
+        }
+    </style>
+</head>
+<body>
+    <canvas class="mycanvas" width = "1200" height = "580"></canvas>
+    <script>
+        let mycanvas = document.querySelector(".mycanvas"),
+        selection,
+        mm, /// suret istiqamet;
+        ctx = mycanvas.getContext("2d"),xb,yb,
+        runner =[
+                    {
+                        x:[xStart()],
+                        y:[yStart()]
+                    },
+                    {
+                        xi:[1,1],      //   artma azalma x
+                        yi:[1,1]
+                    }
+                ];
+            for(let k =0;k < 100 ;k++){
+                runner[0].x.push(xStart());
+                runner[0].y.push(yStart());
+                runner[1].xi.push(Start());
+                runner[1].yi.push(Start());
+
+
+            }
+
+
+
+        window.onload = function(){
+            setInterval(run,25);
+
+            function run(){
+                ctx.clearRect(0,0,mycanvas.width,mycanvas.height);        //    canvasi temizlemek
+                let g = 0;
+                for(let i  = 0 ; i < runner[0].x.length;i++){
+                    
+                    ctx.beginPath();
+                    ctx.fillStyle = "red";
+                    ctx.arc(runner[0].x[i],runner[0].y[i],2,0*Math.PI,2*Math.PI);
+                    ctx.fill();
+
+
+
+                    for(let k = 0; k < runner[0].x.length;k++){
+                        if(k != i){
+                            let dist = Math.sqrt(Math.pow(runner[0].x[i] - runner[0].x[k],2) + Math.pow(runner[0].y[i] - runner[0].y[k],2));
+                            if(dist <= 100 && dist >= -100){  
+                                ctx.beginPath();
+                                ctx.lineWidth = "0.2";
+                                ctx.strokeStyle = "#fff";
+                                ctx.moveTo(runner[0].x[k],runner[0].y[k]);
+                                ctx.lineTo(runner[0].x[i],runner[0].y[i]);
+                                ctx.stroke();
+
+                            }
+                        }
+                    }
+
+
+
+
+
+                    // if(g != 0){
+                    //     ctx.beginPath();
+                    //     ctx.strokeStyle = "#fff";
+                    //     ctx.moveTo(xb,yb);
+                    //     ctx.lineTo(runner[0].x[i],runner[0].y[i]);
+                    //     ctx.stroke();
+
+
+                    // }
+                    // g++;
+                    // xb = runner[0].x[i];
+                    // yb = runner[0].y[i];
+                    runner[0].x[i]+= runner[1].xi[i];
+                    runner[0].y[i]+= runner[1].yi[i];
+
+                    if(runner[0].x[i] >= mycanvas.width + 20 || runner[0].y[i] >= mycanvas.height+20 || runner[0].x[i] <= -20 || runner[0].y[i] <= -20 ){
+
+                            selection = Math.floor(2 * Math.random());
+                            
+                            
+                            if(selection === 0){
+                                selection = Math.floor(2 * Math.random());
+                                if(selection === 0) runner[0].x[i] = -10;
+                                else runner[0].x[i] = mycanvas.width + 10;
+                                runner[0].y[i] = yStart();
+                            }else{
+                                selection = Math.floor(2 * Math.random());
+                                if(selection === 0) runner[0].y[i] = -10;
+                                else runner[0].y[i] = mycanvas.height + 10;
+                                runner[0].x[i] = xStart();
+
+
+                            }
+                            
+
+
+
+
+                            runner[1].xi[i] = Start();
+                            runner[1].yi[i] = Start();
+                    }
+                }
+                
+            }
+
+    }
+        function Start(){
+            rand = Math.floor(3  - (6 * Math.random()));
+            return rand != 0 ? rand : 1;
+        }
+
+        function xStart(){
+            return Math.floor(mycanvas.width * Math.random());
+        }
+        function yStart(){
+            return Math.floor(mycanvas.height * Math.random());
+        }
+
+
+    </script>
+
+    
+</body>
+</html>

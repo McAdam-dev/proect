@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Card</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+
+            background: #aeaeae;
+        }
+
+        #container {
+            width: 90%;
+            margin: 25px auto;
+        }
+
+        #first-pard {
+            width: 61%;
+            background: #ffffff;
+            display: inline-block;
+            margin: 20px;
+            margin-right: 6px;
+            box-shadow: 10px 10px 5px rgba(0, 0, 0, .8);
+            border-top-left-radius: 20px;
+            border-bottom-left-radius: 20px;
+        }
+        .card{
+        }
+
+        #second-pard {
+            width: 28%;
+            background: #ffffff;
+            display: inline-block;
+            margin: 20px;
+            box-shadow: 10px 10px 5px rgba(0, 0, 0, .8);
+            border-top-right-radius: 20px;
+            border-bottom-right-radius: 20px;
+            margin-left: 0;
+            position:absolute;
+            top:3.5%;
+            right:7%;
+        }
+        .content{
+            width:98%;
+            margin:10px auto;
+            text-align:center;
+            padding:10px;
+            
+        }
+        
+        .card{
+            width:31%;
+            border-radius:15px;
+            box-shadow:5px 5px 10px rgba(0,0,0,.4);
+            display:inline-block;
+            margin:5px;
+            text-align:center;
+        }
+        input,textarea,button{
+            width:100%;
+            padding:5px;
+        }
+        img{
+            width:100%;
+            border-top-left-radius:15px;
+            border-top-right-radius:15px;
+        }
+        h1{
+            padding-top:10px;
+        }
+        p{
+            padding:10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div id="first-pard">
+            <div class="content"></div>
+        </div>
+        <dic id="second-pard">
+            <div class="content">
+               <div id="form">
+                <select id = 'caracter'>
+                    <option value="thor">thor</option>
+                    <option value="spiderman">spiderman</option>
+                    <option value="ironman">ironman</option>
+                </select>
+                <input type="text" id = 'h1'>
+                <textarea name="message" id = "content"rows="10"></textarea>
+                <button id="btn">Add</button>
+                </div>
+            </div>
+        </dic>
+    </div>
+
+    <script>
+        var first = document.querySelector('#first-pard .content'),
+            second = document.querySelector('#second-pard');
+        var caracter = document.querySelector('#caracter');
+        var header = document.querySelector('#h1');
+        var content = document.querySelector('#content');
+        var btn = document.querySelector('#btn');
+        btn.onclick = function(){
+            
+        header.value = caracter.value;
+            first.innerHTML += '<div class = "card"><img src ="'+caracter.value+'.jpg"><h1>'+header.value+'</h1><p>'+content.value+'</p></div>'
+        }
+        
+        
+        
+        
+//        var cards = {
+//            img: [],
+//            h1:[],
+//            content:[]
+//        }
+    </script>
+</body>
+
+</html>

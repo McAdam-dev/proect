@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Game</title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+            overflow: hidden;
+            box-sizing:border-box;
+        }
+    </style>
+</head>
+<body>
+   <canvas id="canvas">
+   </canvas>
+    
+    <script tyle = "text/javascript">
+        var canvas = document.querySelector('#canvas');
+        var h = window.innerHeight, e = window.innerWidth,ctx = canvas.getContext('2d');
+        
+        canvas.width = e;
+        canvas.height = h;
+        
+        ctx.fillRect( 0 , 0 , e , h);
+        
+        
+    </script>
+</body>
+</html>

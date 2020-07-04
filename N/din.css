@@ -1,0 +1,101 @@
+#main{
+  width: 1200px;
+  margin: 0px auto;
+}
+#header{
+  height:
+}
+#logo{
+  display: inline-block;
+  margin-left: 20px;
+}
+#title{
+  display: inline-block;
+  position: absolute;
+  top: 45px;
+  left: 420px;
+  font-size: 40px;
+}
+#menu{
+  margin-left: 370px;
+}
+ul{
+  margin: 0px;
+  padding: 0px;
+  list-style-type: none;
+  position: absolute;
+
+}
+li[title="red"]{
+  display:inline-block;
+  float: left;
+  margin: 2px;
+
+}
+li a{
+  display: block;
+  background-color: #2f3036;
+  min-width: 140px;
+  color: white;
+  text-decoration: none;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+}
+li a:hover{
+  background-color: #19C589;
+}
+li:hover ul a{
+  background-color: #f3f3f3;
+  color: black;
+
+}
+li:hover ul a:hover{
+  background-color: #19C589;
+  color: #fff;
+}
+li ul li{
+  display: block;
+  float: none;
+
+}
+li:hover a{
+  background-color: #19C589;
+}
+
+.hidden{
+  display: none;
+}
+ul li a:hover + .hidden,.hidden:hover{
+  display: block;
+}
+#content{
+  width: 75%;
+  display: inline-block;
+  float: left;
+  margin-top: 16px;
+}
+#sidebar{
+  width: 20%;
+  display: inline-block;
+
+}
+button{
+  width: 70px;
+  height: 20px;
+  font-weight: bold;
+}
+#news{
+  float: left;
+}
+.color{
+  color: #2f3036;
+}
+#footer{
+  width: 100%;
+  background-color: #2f3036;
+  height: 50px;
+  color: white;
+  text-align: left;
+
+}

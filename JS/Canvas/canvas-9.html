@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        canvas{
+            border:2px solid #000;
+            background:red;
+
+        }
+    </style>
+</head>
+<body>
+    <img src="canvas-9.jpg" alt="" id = "sekil" style = "display:none">
+    <canvas id="mycanvas" height = "400" width = "600"></canvas>
+    <script>
+window.onload = function(){
+
+        let myCanvas = document.querySelector("#mycanvas");
+        let ctx = myCanvas.getContext("2d");
+        sekil = document.querySelector("#sekil");
+        ctx.drawImage(sekil,100,100,100,100,100,100,200,200)
+
+
+
+    }
+    </script>
+</body>
+</html>

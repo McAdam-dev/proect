@@ -1,0 +1,68 @@
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+#container{
+  width:50%;
+  margin:25px auto;
+
+}
+#header input{
+  width:80%;
+  border:1px solid grey;
+  border-right:none;
+  padding:10px;
+}
+#header #btn{
+  width:20%;
+  border:1px solid grey;
+  padding:10px;
+}
+/*list*/
+#body{
+  margin-top:15px;
+}
+#Mylist{
+  list-style:none;
+}
+.item{
+  padding:10px;
+  border:1px solid grey;
+  border-top:none;
+  position:relative;
+}
+.header-list {
+  padding:10px;
+  background:#CCC;
+  border:1px solid grey;
+  position:relative;
+}
+span{
+  position:absolute;
+  right:10px;
+  top:50%;
+  transform:translateY(-50%);
+  font-size:20px;
+  color:red;
+  cursor:pointer;
+}
+.active{
+  color:#fff;
+  background:blue;
+  text-decoration:line-through;
+}
+#btnDel{
+  padding:5px 8px;
+  cursor:pointer;
+  display:none;
+  background:red;
+  border:none;
+  border-radius:10px;
+  position:absolute;
+  color:#fff;
+  font-weight:900;
+  right:10px;
+  top:50%;
+  transform:translateY(-50%);
+}

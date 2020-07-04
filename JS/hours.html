@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hours</title>
+    <style>
+        .header{
+            position:relative;
+            width:300px;
+            height:300px;
+            border:14px solid black;
+            background:#ececec;
+            border-radius:50%;
+            box-shadow:0 2vw 4vw -1vw rgba(0,0,0,.72);
+            margin:8% auto 0;
+        }
+        .dot{
+            width:14px;
+            height:14px;
+            background:#000;
+            position:absolute;
+            border-radius:50%;
+            margin:auto;
+            top:0;
+            left:0;
+            right:0;
+            bottom:0;
+            z-index:10;
+            box-shadow:0 3px 2px rgba(0,0,0,0.72)
+
+        }
+        .hour-hand{
+            position:absolute;
+            width:4px;
+            height:65px;
+            background:blue;
+            z-index:5;  
+            border-top-left-radius:50%;
+            border-top-right-radius:50%;
+            top:79px;
+            transform-origin: 50% 72px;
+            left:50%;
+            margin-left:-2px;
+
+        }
+        .minute-hand{
+            width:4px;
+            position:absolute;
+            height:100px;
+            z-index:6;
+            background-color:#000;
+            top:46px;
+            transform-origin:50% 105px;
+            transform:rotate(50deg);
+            left:50%;
+            margin-left:-2px;
+            border-top-left-radius: 50%;
+            border-top-right-radius: 50%;
+        }
+        .second-hand{
+            width:2px;
+            position:absolute;
+            height:120px;
+            z-index:7;
+            background-color:red;
+            top:26px;
+            transform-origin:50% 125px;
+            left:50%;
+            margin-left:-1px;
+            border-top-left-radius: 50%;
+            border-top-right-radius: 50%;
+        }
+        span{
+            display:inline-block;
+            position:absolute;
+            color:#222;
+            font-size:22px;
+            font-family: "Poiret One";
+            font-weight:700;
+            z-index:4;
+        }
+        .h12{
+            top:30px;
+            left:50%;
+            margin-left:-9px;
+        }
+        .h6{
+            bottom:30px;
+            left:50%;
+            margin-left:-5px;
+        }
+        .h3{
+            right:30px;
+            top:50%;
+            margin-top:-9px;
+        }
+        .h9{
+            left:32px;
+            top:50%;
+            margin-top:-9px;
+        }
+        .lines {
+            position:absolute;
+            z-index:2;
+            width:2px;
+            height:15px;
+            background:#666;
+            left:50%;
+            margin-left:-1px;
+            transform:rotate(6deg);
+            transform-origin:50% 150px;
+        }
+        .lines:nth-of-type(5n){
+            position:absolute;
+            z-index:2;
+            width:4px;
+            height:25px;
+            background:#666;
+            left:50%;
+            margin-left:-1px;
+            transform-origin:50% 150px;
+        }
+    </style>
+</head>
+<body>
+    <div class = "header">
+        <div class="hour-hand"></div>
+        <div class="minute-hand"></div>
+        <div class="second-hand"></div>
+        <div class="dot"></div>
+        <div class="hours">
+            <span class="h3">3</span>
+            <span class="h6">6</span>
+            <span class="h9">9</span>
+            <span class="h12">12</span>
+        </div>
+        <div class="lines"></div>
+    </div>
+
+    <script>
+        let Header = document.querySelector('.header'),
+        d,
+        s,m,h,sdeg,mdeg,hdeg,
+        lines = document.getElementsByClassName('lines');
+        for(let i =2;i <61;i++){
+            Header.innerHTML += '<div class="lines"></div>';
+            lines[i-1].style.transform = "rotate(" + 6 * i +"deg)";
+        }
+        function clock(){
+        setInterval(function(){
+            let secondHand = document.querySelector('.second-hand'),
+            minuteHand = document.querySelector('.minute-hand'),
+            hourHand = document.querySelector('.hour-hand');
+            d = new Date(),
+            s = d.getSeconds(),
+            m = d.getMinutes(),
+            h = d.getHours(),
+            sdeg = s * 6;
+            mdeg = ((m * 6) + (s / 10));
+            hdeg = ((h * 30) + (m / 2));
+            hourHand.style.transform =   "rotate(" + hdeg + "deg)";
+            minuteHand.style.transform = "rotate(" + mdeg + "deg)";
+            secondHand.style.transform = "rotate("+ sdeg + "deg)";
+            console.log(h);
+        },1000);
+    }
+    clock();
+        
+        
+    </script>
+    
+</body>
+</html>

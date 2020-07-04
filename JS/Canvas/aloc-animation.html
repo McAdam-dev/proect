@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="mycanvas"></canvas>
+
+    <script>
+        let mycanvas = document.querySelector("#mycanvas");
+        let ctx = mycanvas.getContext("2d");
+        h = window.innerHeight;
+        w = window.innerWidth;
+        mycanvas.height = h;
+        mycanvas.width = w;
+        fires = [];
+        for(let i=0;i<300;i++){
+
+            fires.push({x:w/2-100*Math.random(),y:h/2,r:20 * Math.random() + 1,vy:5 * Math.random(),life:30*Math.random()});
+
+        }
+        function action(){
+            ctx.fillStyle = "black";
+            ctx.clearRect(0,0,w,h);
+            ctx.fillRect(0,0,w,h);
+            ctx.globalCompositeOperation = "lighter";
+            
+            for(let i = 0;i<300;i++){
+                let color = ctx.createRadialGradient(fires[i].x,fires[i].y,2,fires[i].x,fires[i].y,fires[i].r);
+                color.addColorStop(0,"#fff");
+                color.addColorStop(0.4,"yellow");
+                color.addColorStop(0.6,"orange");
+                color.addColorStop(1,"red");
+                ctx.fillStyle = color;
+                ctx.beginPath();
+                ctx.arc(fires[i].x,fires[i].y,fires[i].r,0*Math.PI,2*Math.PI);
+                ctx.fill();
+
+                fires[i].y -= fires[i].vy;
+                fires[i].r -= 0.3;
+                fires[i].life -= -1;
+                if( fires[i].life < 0 || fires[i].r < 0){
+
+                    fires[i].x = w / 2 - 100 * Math.random();
+                    fires[i].y = h / 2;
+                    fires[i].r = 20 * Math.random() + 1;
+                    fires[i].life = 30 * Math.random();
+
+                }
+            }
+        }
+        setInterval(action,30);
+    </script>
+    
+</body>
+</html>

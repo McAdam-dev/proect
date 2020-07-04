@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>SetInterval</title>
+  <style>
+    #red{
+      box-sizing:border-box;
+      width:600px;
+      height:150px;
+      background:red;
+      position:absolute;
+      margin:auto 0;
+      top:50%;
+      bottom:50%;
+      transform:translate(-50,-50);
+      left:0;
+      text-align:center;
+      font-size:105px;
+      padding-top:12px;
+      color:#fff;
+    }
+  </style>
+</head>
+<body>
+    <div id="red">0</div>
+    <script>
+      var red = document.getElementById('red');
+      var ifred = false;
+      var a = 0;
+      setInterval(function(){
+        a++;
+        red.innerText = a;
+
+      },1);
+    </script>
+</body>
+</html>
